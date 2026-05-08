@@ -9,14 +9,8 @@ const Footer = () => {
           <p className="text-[10px] text-gray-600 uppercase tracking-[0.3em]">Building in public since 2024</p>
         </div>
 
-        <div className="flex gap-12 text-[10px] text-gray-500 font-bold uppercase tracking-widest">
-          <a href="https://twitter.com" className="hover:text-white transition-colors">Twitter</a>
-          <a href="https://github.com" className="hover:text-white transition-colors">GitHub</a>
-          <a href="https://linkedin.com" className="hover:text-white transition-colors">LinkedIn</a>
-        </div>
-
         <p className="text-[10px] text-gray-700 font-mono">
-          © {new Date().getFullYear()} — ANTI-GRAVITY DESIGN
+          © {new Date().getFullYear()} — BHUVAN
         </p>
       </div>
     </footer>
