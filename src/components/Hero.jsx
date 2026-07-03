@@ -66,11 +66,11 @@ const Hero = () => {
           className="flex flex-row gap-6 md:gap-12 items-center justify-center w-full px-4"
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 max-w-[220px]">
-            <Link to="/journey" className="block w-full">
+            <a href="https://jeeviksha.vercel.app" target="_blank" rel="noopener noreferrer" className="block w-full">
               <ShimmerButton className="w-full shadow-2xl">
                 Explore Journey
               </ShimmerButton>
-            </Link>
+            </a>
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 max-w-[220px]">
