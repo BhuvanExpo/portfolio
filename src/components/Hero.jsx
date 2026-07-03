@@ -4,7 +4,7 @@ import { ShimmerButton } from './magicui/ShimmerButton';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
-  const words = useMemo(() => ["Startup Founder", "Web Developer", "BTech Student", "Innovator"], []);
+  const words = useMemo(() => ["Founder of Jeeviksha", "Web Developer", "BTech Student", "Innovator"], []);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {

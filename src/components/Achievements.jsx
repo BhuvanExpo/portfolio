@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Award, Calendar, Briefcase, Trophy } from 'lucide-react';
+import { Calendar, Briefcase, Trophy } from 'lucide-react';
 
 const Achievements = () => {
   const sections = useMemo(() => [
@@ -18,14 +18,6 @@ const Achievements = () => {
       items: [
         { name: "StartupX Lab", role: "Frontend Developer", date: "Jun - Aug 2024" },
         { name: "TechNova Solutions", role: "UI Designer", date: "Jan - Mar 2024" }
-      ]
-    },
-    {
-      title: "Certificates",
-      icon: <Award size={20} />,
-      items: [
-        { name: "AWS Certified Developer", role: "Amazon Web Services", date: "2024" },
-        { name: "Full Stack Masterclass", role: "Meta", date: "2023" }
       ]
     },
     {
