@@ -22,3 +22,21 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Dependencies & Caches
+node_modules/
+.venv/
+venv/
+env/
+ENV/
+Pods/
+.expo/
+.next/
+dist/
+build/
+.tmp.*
+# Secrets & Configs
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
