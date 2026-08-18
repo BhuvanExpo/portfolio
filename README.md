@@ -44,7 +44,7 @@ portpolio/
 │   │   ├── Footer.jsx        # Site footer
 │   │   ├── Reveal.jsx        # Scroll-reveal wrapper
 │   │   ├── Tilt.jsx          # Mouse-tilt effect
-│   │   └── magicui/          # Custom MagicUI components (Dock, Meteors, StarField, ShimmerButton)
+│   │   └── magicui/          # Custom MagicUI components
 │   ├── pages/
 │   │   ├── Home.jsx          # Main landing page
 │   │   ├── JourneyPage.jsx   # Full journey/timeline page

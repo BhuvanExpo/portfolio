@@ -19,13 +19,13 @@ const Projects = () => {
     {
       title: "NextGen AI SaaS — Automate. Scale. Innovate.",
       description: "Empower your business with cutting-edge artificial intelligence designed for speed, scalability, and performance.",
-      tags: ["TypeScript ", "MongoDB", "Framer"],
+      tags: ["TypeScript", "MongoDB", "Framer"],
       link: "https://ai-saas-website-delta.vercel.app"
     },
     {
       title: "Nexa Restaurant — Modern Taste, Timeless Experience",
       description: "Experience exceptional dining with carefully crafted dishes, elegant ambiance, and unforgettable flavors designed for true food lovers.",
-      tags: ["TypeScript ", "MongoDB", "Framer"],
+      tags: ["TypeScript", "MongoDB", "Framer"],
       link: "https://resto-eta-two.vercel.app"
     }
   ], []);
@@ -57,7 +57,7 @@ const Projects = () => {
           transition={{ duration: 0.8, type: "spring" }}
           className="text-4xl font-black text-white mb-12 tracking-tighter uppercase text-center"
         >
-          Websites & Products
+          Websites &amp; Products
         </motion.h2>
 
         <motion.div

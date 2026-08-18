@@ -12,7 +12,6 @@ const StarField = () => {
     let animationId;
     let width, height;
 
-    // --- Resize handler ---
     const resize = () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
@@ -20,7 +19,6 @@ const StarField = () => {
     resize();
     window.addEventListener('resize', resize);
 
-    // --- Static twinkling stars ---
     const STAR_COUNT = 200;
     const stars = Array.from({ length: STAR_COUNT }, () => ({
       x: Math.random() * width,
@@ -31,7 +29,6 @@ const StarField = () => {
       twinkleDir: Math.random() > 0.5 ? 1 : -1,
     }));
 
-    // --- Falling stars (shooting stars) ---
     const MAX_FALLING = 6;
     const fallingStars = [];
 
@@ -40,14 +37,13 @@ const StarField = () => {
       y: -10,
       length: Math.random() * 80 + 40,
       speed: Math.random() * 3 + 2,
-      angle: Math.PI / 4 + (Math.random() - 0.5) * 0.3, // ~45° falling angle
+      angle: Math.PI / 4 + (Math.random() - 0.5) * 0.3,
       opacity: 1,
       thickness: Math.random() * 1.5 + 0.5,
       life: 0,
       maxLife: Math.random() * 200 + 150,
     });
 
-    // Spawn initial batch
     for (let i = 0; i < 3; i++) {
       const star = createFallingStar();
       star.y = Math.random() * height * 0.5;
@@ -55,13 +51,10 @@ const StarField = () => {
       fallingStars.push(star);
     }
 
-    // --- Draw ---
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Draw static twinkling stars
       for (const star of stars) {
-        // Twinkle
         star.opacity += star.twinkleSpeed * star.twinkleDir;
         if (star.opacity >= 1) { star.opacity = 1; star.twinkleDir = -1; }
         if (star.opacity <= 0.1) { star.opacity = 0.1; star.twinkleDir = 1; }
@@ -72,22 +65,18 @@ const StarField = () => {
         ctx.fill();
       }
 
-      // Draw and update falling stars
       for (let i = fallingStars.length - 1; i >= 0; i--) {
         const fs = fallingStars[i];
 
-        // Move
         fs.x += Math.cos(fs.angle) * fs.speed;
         fs.y += Math.sin(fs.angle) * fs.speed;
         fs.life++;
 
-        // Fade out in the last 30% of life
         const fadeStart = fs.maxLife * 0.7;
         if (fs.life > fadeStart) {
           fs.opacity = 1 - (fs.life - fadeStart) / (fs.maxLife - fadeStart);
         }
 
-        // Draw the falling star trail
         const tailX = fs.x - Math.cos(fs.angle) * fs.length;
         const tailY = fs.y - Math.sin(fs.angle) * fs.length;
 
@@ -104,19 +93,16 @@ const StarField = () => {
         ctx.lineCap = 'round';
         ctx.stroke();
 
-        // Draw bright head glow
         ctx.beginPath();
         ctx.arc(fs.x, fs.y, fs.thickness + 1, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${fs.opacity * 0.8})`;
         ctx.fill();
 
-        // Remove dead stars
         if (fs.life >= fs.maxLife || fs.y > height + 20 || fs.x > width + 20) {
           fallingStars.splice(i, 1);
         }
       }
 
-      // Spawn new falling stars
       if (fallingStars.length < MAX_FALLING && Math.random() < 0.02) {
         fallingStars.push(createFallingStar());
       }
