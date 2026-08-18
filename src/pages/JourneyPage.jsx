@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Journey from '../components/Journey';
 import Reveal from '../components/Reveal';
 import AuroraBackground from '../components/magicui/AuroraBackground';

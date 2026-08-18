@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 
 const About = () => {
@@ -48,16 +48,8 @@ const About = () => {
 
           <div className="flex gap-8">
             <motion.div whileHover={{ scale: 1.1, y: -5 }} className="transform-gpu transition-transform cursor-default">
-              <p className="text-2xl font-black text-white">03+</p>
+              <p className="text-2xl font-black text-white">06+</p>
               <p className="text-[10px] text-gray-600 uppercase tracking-widest">Websites Shipped</p>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.1, y: -5 }} className="transform-gpu transition-transform cursor-default">
-              <p className="text-2xl font-black text-white">05+</p>
-              <p className="text-[10px] text-gray-600 uppercase tracking-widest">Hackathon Wins</p>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.1, y: -5 }} className="transform-gpu transition-transform cursor-default">
-              <p className="text-2xl font-black text-white">60+</p>
-              <p className="text-[10px] text-gray-600 uppercase tracking-widest">Days Publicly Building</p>
             </motion.div>
           </div>
         </motion.div>

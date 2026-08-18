@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Projects from '../components/Projects';
 import Reveal from '../components/Reveal';
 import GridBackground from '../components/magicui/GridBackground';

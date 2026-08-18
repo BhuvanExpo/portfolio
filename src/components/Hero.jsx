@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShimmerButton } from './magicui/ShimmerButton';
 import { Link } from 'react-router-dom';

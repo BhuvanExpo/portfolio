@@ -1,10 +1,19 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
+
+// Pre-computed at module level so Math.random() is never called during render
+const PARTICLE_DATA = Array.from({ length: 30 }, () => ({
+  x: Math.random() * 1440,
+  y: Math.random() * 900,
+  scale: Math.random() * 0.5 + 0.5,
+  opacity: Math.random() * 0.5 + 0.2,
+  animY: Math.random() * -100 - 50,
+  duration: Math.random() * 5 + 5,
+}));
 
 const GridBackground = () => {
   const horizontalLines = useMemo(() => Array.from({ length: 20 }), []);
   const verticalLines = useMemo(() => Array.from({ length: 20 }), []);
-  const particles = useMemo(() => Array.from({ length: 30 }), []);
 
   return (
     <div className="fixed inset-0 z-0 bg-black overflow-hidden pointer-events-none perspective-1000">
@@ -40,24 +49,12 @@ const GridBackground = () => {
 
       {/* Floating Particles */}
       <div className="absolute inset-0 z-10">
-        {particles.map((_, i) => (
+        {PARTICLE_DATA.map((p, i) => (
           <motion.div
             key={`p-${i}`}
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              scale: Math.random() * 0.5 + 0.5,
-              opacity: Math.random() * 0.5 + 0.2
-            }}
-            animate={{
-              y: [null, Math.random() * -100 - 50],
-              opacity: [null, 0]
-            }}
-            transition={{
-              duration: Math.random() * 5 + 5,
-              repeat: Infinity,
-              ease: "linear"
-            }}
+            initial={{ x: p.x, y: p.y, scale: p.scale, opacity: p.opacity }}
+            animate={{ y: [null, p.animY], opacity: [null, 0] }}
+            transition={{ duration: p.duration, repeat: Infinity, ease: "linear" }}
             className="absolute w-1 h-1 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] transform-gpu"
           />
         ))}
